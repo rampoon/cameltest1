@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration>
     <Properties>
-        <Property name="logFolder">logs</Property>
+        <Property name="appFolder">/home/matjav/apps/cameltest1</Property>
+        <Property name="appName">cameltest1</Property>
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
-            <PatternLayout
-                    pattern="%style{%d{ISO8601}}{black} %highlight{%-5level }[%style{%t}{bright,blue}] %style{%C{1.}}{bright,yellow}: %msg%n%throwable" />
+            <PatternLayout pattern="L %d{ISO8601} %-5level [%t] %C{1.}: %msg%X%n%throwable"/>
         </Console>
-
         <RollingFile name="RollingFile"
-                     fileName="${logFolder}/example2.log"
-                     filePattern="${logFolder}/$${date:yyyy-MM}/example2-%d{-dd-MMMM-yyyy}-%i.log.gz">
+                     fileName="${appFolder}/logs/${appName}.log"
+                     filePattern="${appFolder}/logs/$${date:yyyy-MM}/${appName}-%d{-dd-MMMM-yyyy}-%i.log.gz">
             <PatternLayout>
                 <pattern>%d %p %C{1.} [%t] %m%n</pattern>
             </PatternLayout>
             <Policies>
-                <!-- rollover on startup, daily and when the file reaches
-                    10 MegaBytes -->
+                <!-- rollover on startup and daily-->
                 <OnStartupTriggeringPolicy />
-                <SizeBasedTriggeringPolicy
-                        size="10 MB" />
                 <TimeBasedTriggeringPolicy />
             </Policies>
         </RollingFile>
