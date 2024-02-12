@@ -5,7 +5,7 @@
 Test of Camel 
 * Textfile as input
 * Logging headers (key, value) to logfile
-* Textfile as output
+* Textfile as output.
 
 ## How to build locally
 ```
