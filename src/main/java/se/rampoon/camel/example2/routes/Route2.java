@@ -12,10 +12,10 @@ public class Route2 extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-        from("file:/home/matjav/files/inbox?move=./done")
+        from("file:/home/matjav/apps/cameltest1/files/inbox?move=./done")
             .log(LoggingLevel.INFO, LOG, "Starting...")
-          //  .process(new MyLogProcessor2())
+            .process(new MyLogProcessor2())
             .bean(new MyTransformer2(), "TransformContent")
-            .to("file:/home/matjav/files/outbox");
+            .to("file:/home/matjav/apps/cameltest1/files/outbox");
     }
 }
