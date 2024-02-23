@@ -8,36 +8,14 @@
 	<version>1.0.0-SNAPSHOT</version>
 
 	<name>cameltest1</name>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.1.7.RELEASE</version>
-	</parent>
 
 	<properties>
-		<!-- encoding -->
 		<encoding>UTF-8</encoding>
 		<project.reporting.outputEncoding>${encoding}</project.reporting.outputEncoding>
 		<project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
-		<!-- jvm -->
-		<!-- <java.version>1.8</java.version> -->
 		<java.version>11</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<!-- frameworks -->
-		<camel.version>2.24.1</camel.version>
-		<cxf.version>3.2.7</cxf.version>
-		<log4j.version>2.12.1</log4j.version>
-		<spring.boot.version>2.1.7.RELEASE</spring.boot.version>
-		<!-- plugins -->
-		<jar.version>3.1.2</jar.version>
-		<jacoco.version>0.8.4</jacoco.version>
-		<resources.version>3.1.0</resources.version>
-		<!-- rpm package configuration -->
-		<rpm.package.name>ppm-${project.artifactId}</rpm.package.name>
-		<rpm.package.version>${project.version}</rpm.package.version>
-		<rpm.package.install.dir>/var/opt/matjav_cameltest3</rpm.package.install.dir>
-		<rpm.user.group>matjav_cameltest3</rpm.user.group>
 	</properties>
 
 	<dependencyManagement>
